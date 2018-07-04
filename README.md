@@ -37,7 +37,7 @@ python extract_seqs_based_on_taxonomy.py
 **3. Analysis of CAZyme-related sequences**
 ---------------------------------------
 
-CAZyme-affiliated mRNA reads were identified by querying mRNA-derived sequences against a local copy of the dbCAN database (Ref) that has been indexed for being used with _diamond_ (Ref). _diamond_ was used as follows:
+CAZyme-affiliated mRNA reads were identified by querying mRNA-derived sequences against a local copy of the dbCAN database (Yin et al., 2012) that has been indexed for being used with _diamond_ (Buchfink et al., 2015). _diamond_ was used as follows:
 
 ```
 diamond blastx -d dbCAN_072017.dmd -q mRNA_derived_seqs.fna -o dbCAN_hits.out -f 6
