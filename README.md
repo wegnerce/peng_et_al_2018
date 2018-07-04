@@ -53,15 +53,15 @@ In order to use dbCAN_annotator, the script (dbcan_annotator.py) and the sqlite3
 
 dbCAN_annotator can be used as follows.
 
-#3 (i) Generating annotation summaries
+### (i) Generating annotation summaries
 ```
 python dbCAN_annotator.py --mode annot --diamond diamond_output.tab --seq queried_sequence_data.fasta 
 ```
-#3 (ii) Extracting sequences linked to functional modules
+### (ii) Extracting sequences linked to functional modules
 ```
 python dbCAN_annotator.py --mode filter --diamond diamond_output.tab --seq queried_sequence_data.fasta 
 ```
-#3 (iii) Extracting sequences linked to particular CAZyme functions of interest
+### (iii) Extracting sequences linked to particular CAZyme functions of interest
 ```
 python dbCAN_annotator.py --mode func_filter --diamond diamond_output.tab --seq queried_sequence_data.fasta --func list_of_CAZyme_functions_of_interest.txt
 ```
