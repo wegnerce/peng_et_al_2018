@@ -20,6 +20,13 @@ python uc2otutab_mod.py input_uc.file > output_otutab.file
 
 We used _emirge_ (REF) for the reconstruction of full-length 16S rRNA sequences. The subsampling of our 16S rRNA-derived sequence data for sequences of interest was a necessary prerequisite to reduce the computational load of 16S rRNA sequence reconstruction. For the subsampling of the data we wrote a _python_ script that processes various _qiime_ (v.1.9.1) output files. 
 
+In its current version the paths of the necessary input and the to be generated output files have to be modified in the code of the script. A more convenient version, where paths and parameters will be passed via commandline arguments will be available shortly.
+
+After modifying the path variables, as well as defining the taxonomic group of interest the script can be called as follows:
+```
+python extract_seqs_based_on_taxonomy.py
+```
+
 **3. Analysis of CAZyme-related sequences**
 ---------------------------------------
 
