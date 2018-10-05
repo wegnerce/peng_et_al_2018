@@ -1,5 +1,5 @@
-Peng et al., 2018 doi:
-======================
+Peng et al., 2018 https://doi.org/10.1186/s40168-018-0546-9
+============================================================
 
 Below, details are given with respect to steps of sequence data processing that involved custom _python_ scripts. The individual subsections are named to match the corresponding methods sections of the publication and are complementary to those.
 
