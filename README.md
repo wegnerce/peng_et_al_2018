@@ -13,7 +13,7 @@ All of these can be installed via the python package installer `pip`.
 **1. Bioinformatic processing of total RNA-derived sequences**
 ----------------------------------------------------------
 
-OTU clustering of rRNA-derived sequences was done using _usearch_ (v.7) (Edgar, 2010) applying the implemented _uclust_. A custom _python_ script was subsequently used to convert the resulting OTU table (in fact a usearch cluster format file) into a legacy OTU table matching the specifications of _qiime_ (v.1.9.1) (Caporaso et al., 2010), which was in turn converted into a _biom_ table.
+OTU clustering of rRNA-derived sequences was done using _usearch_ (v.7) (Edgar, 2010) applying the implemented _uclust_ algorithm. A custom _python_ script was subsequently used to convert the resulting OTU table (in fact a usearch cluster format file) into a legacy OTU table matching the specifications of _qiime_ (v.1.9.1) (Caporaso et al., 2010), which was in turn converted into a _biom_ table.
 
 The original _python_ script (uc2otutab.py) by Robert Edgar is publicly available and its usage is in detail explained here: https://drive5.com/python/. We modified the script to match our internal naming conventions for datasets, and the script (uc2otutab_mod.py) is availabe from this repository.
 
@@ -27,7 +27,7 @@ python uc2otutab_mod.py input_uc.file > output_otutab.file
 
 We used _emirge_ (Miller et al., 2011) for the reconstruction of full-length 16S rRNA sequences. The subsampling of our 16S rRNA-derived sequence data for sequences of interest was a necessary prerequisite to reduce the computational load of 16S rRNA sequence reconstruction. For the subsampling of the data we wrote a _python_ script that processes various _qiime_ (v.1.9.1) output files. The script is available from this repository (extract_seqs_based_on_taxonomy.py).
 
-In its current version the paths of the necessary input and the to be generated output files have to be modified in the code of the script. A more convenient version, where paths and parameters will be passed via commandline arguments will be available shortly.
+The paths of the necessary input and the to be generated output files have to be modified in the code of the script. 
 
 After modifying the path variables, as well as defining the taxonomic group of interest the script can be called as follows:
 ```
@@ -43,7 +43,7 @@ CAZyme-affiliated mRNA reads were identified by querying mRNA-derived sequences 
 diamond blastx -d dbCAN_072017.dmd -q mRNA_derived_seqs.fna -o dbCAN_hits.out -f 6
 ```
 
-Functional CAZyme modules were defined as outlined the manuscript main text. Annotations summaries for the mRNA-derived sequences queried against dbCAN were generated using the custom _python_ script dbCAN_annotator.py.
+Functional CAZyme modules were defined as outlined the manuscript main text. Annotation summaries for the mRNA-derived sequences queried against dbCAN were generated using the custom _python_ script dbCAN_annotator.py.
 
 dbCAN_annotator makes use of a mapping file provided by the dbCAN consortium (http://csbl.bmb.uga.edu/dbCAN/download.php, CAZyDB-ec-info.txt.07-20-2017). This mapping file contains information about the CAZyme-family affiliation of each deposited sequence, as well as information about assigned enzyme commission numbers. The latter were used for defining the aforementioned CAZyme functional modules.
 
